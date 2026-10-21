@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Generated run outputs (regenerate with `python -m batchrunner run` / `demo`)
+out/
+*.log
+
+# Working notes
+PLAN.md
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

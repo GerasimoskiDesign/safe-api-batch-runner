@@ -1,0 +1,34 @@
+# Plan rules for the entitlement-refresh workflow.
+#
+# Allow-list design: a number is only refreshed automatically if its plan code
+# is listed under `auto_refresh`. Codes under `manual_only` are eligible for the
+# perk but need a human to look at them (shared or business accounts, where a
+# forced refresh can affect other lines). Every other code - including codes the
+# backend returns that are not in this file at all - is treated as ineligible
+# and skipped. New plan codes therefore fail safe: they are never written to
+# until someone adds them here on purpose.
+
+plans:
+  POST_S: Postpaid S
+  POST_M: Postpaid M
+  POST_L: Postpaid L
+  POST_XL: Postpaid XL
+  YOUTH_PLUS: Youth Plus
+  FAMILY_SHARE: Family Share
+  BUSINESS_PRO: Business Pro
+  BUSINESS_FLEET: Business Fleet
+  PREPAID_BASIC: Prepaid Basic
+  PREPAID_DATA: Prepaid Data
+  LEGACY_VOICE: Legacy Voice
+
+auto_refresh:
+  - POST_S
+  - POST_M
+  - POST_L
+  - POST_XL
+  - YOUTH_PLUS
+
+manual_only:
+  - FAMILY_SHARE
+  - BUSINESS_PRO
+  - BUSINESS_FLEET
