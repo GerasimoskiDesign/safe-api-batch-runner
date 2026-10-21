@@ -64,5 +64,5 @@ def generate_lines(count: int = 45, duplicates: int = 4, seed: int = 42) -> list
 def write_numbers_file(path: Path, count: int = 45, duplicates: int = 4, seed: int = 42) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
     lines = generate_lines(count=count, duplicates=duplicates, seed=seed)
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     return path

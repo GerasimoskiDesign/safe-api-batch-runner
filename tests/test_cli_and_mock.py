@@ -120,7 +120,9 @@ def test_cli_generate_numbers_is_reproducible(tmp_path):
     assert main(["generate-numbers", "--out", str(a)]) == EXIT_OK
     assert main(["generate-numbers", "--out", str(b)]) == EXIT_OK
     assert a.read_bytes() == b.read_bytes()
-    assert a.read_bytes() == (ROOT / "data" / "numbers_sample.txt").read_bytes()
+    # Text comparison: a Windows checkout may have converted the sample to CRLF.
+    sample = (ROOT / "data" / "numbers_sample.txt").read_text(encoding="utf-8")
+    assert a.read_text(encoding="utf-8") == sample
 
 
 # --- mock API ----------------------------------------------------------------
