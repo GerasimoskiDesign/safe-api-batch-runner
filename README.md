@@ -98,7 +98,7 @@ The timeline plots every HTTP attempt of the live run from the audit log. Bars n
 
 ## Production context
 
-> _Production context: TODO(Mario) — what the real version did and its outcomes, using only publicly shareable facts._
+Used daily in production to resolve a recurring type of support ticket that was previously handled by hand, one number at a time.
 
 ## Safety design
 
